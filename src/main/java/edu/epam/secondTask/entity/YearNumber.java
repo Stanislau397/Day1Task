@@ -1,10 +1,10 @@
 package edu.epam.secondTask.entity;
 
-public class Year {
+public class YearNumber {
 
     private int yearNumber;
 
-    public Year(int yearNumber) {
+    public YearNumber(int yearNumber) {
         this.yearNumber = yearNumber;
     }
 

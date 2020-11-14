@@ -1,10 +1,10 @@
 package edu.epam.secondTask.entity;
 
-public class Month {
+public class MonthNumber {
 
     private int monthNumber;
 
-    public Month(int monthNumber) {
+    public MonthNumber(int monthNumber) {
         this.monthNumber = monthNumber;
     }
 

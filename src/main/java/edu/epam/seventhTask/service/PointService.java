@@ -1,14 +1,22 @@
 package edu.epam.seventhTask.service;
 
-import edu.epam.seventhTask.entity.PointA;
-import edu.epam.seventhTask.entity.PointB;
+import edu.epam.seventhTask.entity.Point;
 
 public class PointService {
 
-    public int getPointCloserToEntry(PointA a, PointB b) {
+    public Point getPointCloserToEntry(Point point1, Point point2) {
+        double distance1 = calculateDistance(point1);
+        double distance2 = calculateDistance(point2);
 
-        return (a.getX1() * a.getX1() + a.getY1() * a.getY1()) -
-                (b.getX2() * b.getX2() + b.getY2() * b.getY2());
+        if (distance1 < distance2 && distance1 != distance2) {
+            return point1;
+        }
+        return point2;
+    }
+
+    public double calculateDistance(Point point) {
+        return Math.sqrt((point.getX1() * point.getX1()) +
+                point.getY1() * point.getY1());
     }
 
 }

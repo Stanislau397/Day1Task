@@ -1,11 +1,8 @@
 package edu.epam.seventhTask.service;
 
-import edu.epam.seventhTask.entity.PointA;
-import edu.epam.seventhTask.entity.PointB;
+import edu.epam.seventhTask.entity.Point;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-
-import static org.testng.Assert.*;
 
 public class PointServiceTest {
 
@@ -13,15 +10,15 @@ public class PointServiceTest {
     public void testGetPointCloserToEntry() {
         int x1 = 5;
         int x2 = 6;
-        int y1 = 4;
-        int y2 = 8;
+        int y1 = 5;
+        int y2 = 7;
 
-        PointA pointA = new PointA(x1, y1);
-        PointB pointB = new PointB(x2, y2);
+        Point pointA = new Point(x1, y1);
+        Point pointB = new Point(x2, y2);
         PointService pointService = new PointService();
 
-        int result = pointService.getPointCloserToEntry(pointA, pointB);
-        int expResult = -59;
+        Point result = pointService.getPointCloserToEntry(pointA, pointB);
+        Point expResult = pointA;
 
         Assert.assertEquals(result, expResult);
     }

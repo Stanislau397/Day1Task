@@ -1,11 +1,9 @@
 package edu.epam.secondTask.service;
 
-import edu.epam.secondTask.entity.Month;
-import edu.epam.secondTask.entity.Year;
+import edu.epam.secondTask.entity.MonthNumber;
+import edu.epam.secondTask.entity.YearNumber;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-
-import static org.testng.Assert.*;
 
 public class DayServiceTest {
 
@@ -13,7 +11,7 @@ public class DayServiceTest {
     public void testIsLeapYearTrue() {
         int yearNumber = 2020;
 
-        Year year = new Year(yearNumber);
+        YearNumber year = new YearNumber(yearNumber);
         DayService dayService = new DayService();
 
         boolean result = dayService.isLeapYear(year.getYear());
@@ -25,7 +23,7 @@ public class DayServiceTest {
     public void testIsLeapYearFalse() {
         int yearNumber = 2019;
 
-        Year year = new Year(yearNumber);
+        YearNumber year = new YearNumber(yearNumber);
         DayService dayService = new DayService();
 
         boolean condition = dayService.isLeapYear(year.getYear());
@@ -38,7 +36,7 @@ public class DayServiceTest {
     public void testIsMonthValidTrue() {
         int monthNumber = 2;
 
-        Month month = new Month(monthNumber);
+        MonthNumber month = new MonthNumber(monthNumber);
         DayService dayService = new DayService();
 
         boolean condition = dayService.isMonthValid(month.getMonthNumber());
@@ -49,7 +47,7 @@ public class DayServiceTest {
     public void testIsMonthValidFalse() {
         int monthNumber = 15;
 
-        Month month = new Month(monthNumber);
+        MonthNumber month = new MonthNumber(monthNumber);
         DayService dayService = new DayService();
 
         boolean condition = dayService.isMonthValid(month.getMonthNumber());
@@ -64,8 +62,8 @@ public class DayServiceTest {
         int monthNumber = 2;
         int yearNumber = 2020;
 
-        Month month = new Month(monthNumber);
-        Year year = new Year(yearNumber);
+        MonthNumber month = new MonthNumber(monthNumber);
+        YearNumber year = new YearNumber(yearNumber);
         DayService dayService = new DayService();
 
         int result = dayService.getDayNumber(month, year);

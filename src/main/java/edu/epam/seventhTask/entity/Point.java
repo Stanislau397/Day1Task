@@ -1,11 +1,11 @@
 package edu.epam.seventhTask.entity;
 
-public class PointA {
+public class Point {
 
     private int x1;
     private int y1;
 
-    public PointA(int x1, int y1) {
+    public Point(int x1, int y1) {
         this.x1 = x1;
         this.y1 = y1;
     }

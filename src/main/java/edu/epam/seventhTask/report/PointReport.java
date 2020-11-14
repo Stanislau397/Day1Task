@@ -1,19 +1,13 @@
 package edu.epam.seventhTask.report;
 
-import edu.epam.seventhTask.entity.PointA;
-import edu.epam.seventhTask.entity.PointB;
+import edu.epam.seventhTask.entity.Point;
 import edu.epam.seventhTask.service.PointService;
 
 public class PointReport {
 
-    public void printPointCloserToEntry(PointService pointService, PointA a, PointB b) {
+    public void printPointCloserToEntry(Point point1, Point point2, PointService pointService) {
 
-        if (pointService.getPointCloserToEntry(a, b) < 0) {
-            System.out.println(a.toString() + " are closer");
-        } else if (pointService.getPointCloserToEntry(a, b) > 0) {
-            System.out.println(b.toString() + " are closer");
-        } else {
-            System.out.println("They are equally close");
-        }
+        System.out.println("The closest point to start of coordinates is " +
+                pointService.getPointCloserToEntry(point1, point2));
     }
 }
